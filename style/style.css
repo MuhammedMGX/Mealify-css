@@ -1,0 +1,690 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::selection{
+    background-color: #DA5656;
+}
+
+#sct{
+    color: var(--third-font);
+    font-family: Amatic SC;
+}
+p{
+    color: var(--second-font);
+}
+
+:root{
+    --main-background:#EEEEEE;
+    --second-background:white;
+    --main-font:black;
+    --second-font:#8E8E9D;
+    --third-font:#CE1212;
+    --main-effect:#CE1212;
+    --tr-effect:#E61414;
+}
+/* 
+.dark-mode{
+    --main-background:#252525;
+    --second-background:#171717;
+    --main-font:white;
+    --second-font:#8E8E9D;
+    --third-font:#C17E1F;
+    --main-effect:#C17E1F;
+    --tr-effect:#D78C23;
+} */
+
+/*----------------------NAVBAR-----------------------*/
+
+.nav{
+    background-color: var(--second-background);
+    width: 100%;
+    height: 370px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1) ;
+}
+.nav .navcon{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    row-gap: 10rem;
+}
+.nav .navcon h2{
+    padding: 20px 0;
+    font-size: 30px;
+    align-self: flex-end;
+    position: relative;
+}
+.nav .navcon h2::before {
+    content: "";
+    position: absolute;
+    background-color: var(--main-effect);
+    width: 6px;
+    height: 6px;
+    right: -5px;
+    bottom: 25px;
+    border-radius: 100%;
+
+}
+.nav .navcon i{
+    font-size: 25px;
+    padding: 30px 0;
+    cursor: pointer;
+}
+.nav .navcon ul {
+    padding: 70px 1px;
+}
+.nav .navcon ul li{
+    list-style: none;
+    text-align: center;
+    padding: 20px 0;
+    transition: 0.5 all;
+}
+.nav .navcon ul li a{
+    font-weight: 600;
+    color: #8E8E9D;
+    position: relative;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.5 all;
+}
+.nav .navcon ul li:hover a{
+    color: black;
+}
+
+.nav .navcon ul li {
+    color: #8E8E9D;
+    transition: 0.5 all;
+}
+.nav .navcon ul li a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-effect);
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    z-index: 20;
+    transition: 0.5s all;
+}
+
+.nav .navcon ul li:hover a::after {
+    width: 100%;
+}
+
+
+/*----------------------HEADER-----------------------*/
+
+
+header{
+    background-color: var(--main-background);
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .headcon{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+header .headcon .image {
+    width: 100%;
+}
+header .headcon .image img{
+    width: 100%;
+    filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.4));
+    
+}
+header .headcon .image img:hover{
+    animation: translate 0.5s 0s infinite;
+    animation: rotate 0.5s 0s infinite;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(1deg);
+    }
+    25%{
+        transform: rotate(-1deg);
+    }
+    50%{
+        transform: rotate(1deg);
+    }
+    75%{
+        transform: rotate(-1deg);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
+}
+@keyframes translate {
+    0%{
+        transform: translatex(2px);
+    }
+    25%{
+        transform: translatey(-2px);
+    }
+    50%{
+        transform: translatex(2px);
+    }
+    75%{
+        transform: translatey(-2px);
+    }
+    100%{
+        transform: translatex(2px);
+    }
+}
+
+header .headcon .text{
+    text-align: center;
+}
+header .headcon .text h1{
+    font-family: Amatic SC;
+    font-size: 60px;
+    padding-bottom: 20px;
+}
+header .headcon .text p{
+    padding-bottom: 30px;
+}
+header .headcon .text #btn{
+    background-color: var(--main-effect);
+    color: white;
+    font-size: 16px;
+    font-weight: 30px;
+    padding: 10px 30px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    margin-right: 60px;
+    transition: 0.5s all;
+}
+header .headcon .text #btn:hover{
+    background-color: var(--tr-effect);
+}
+header .headcon .text #link{
+    position: relative;
+    background-color: transparent;
+    color: var(--main-font);
+    font-size: 16px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: 0.5s all;
+}
+header .headcon .text #link:hover{
+    color: var(--tr-effect);
+}
+header .headcon .text #link::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    left: -30px;
+    top: -5px;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+    border-top: 8px solid var(--main-effect);
+    border-left: 8px solid var(--main-effect);
+    border-right: 8px solid var(--main-background);
+    border-bottom: 8px solid var(--main-background);
+}
+header .headcon .text #link i{
+    color: var(--main-font);
+    position: absolute;
+    left: -11px;
+    top: 12px;
+    z-index: 10;
+    transition: 0.5s all;
+}
+header .headcon .text #link:hover i{
+    color: var(--tr-effect);
+}
+
+
+/*----------------------CHEFS-----------------------*/
+
+
+.chefs{
+    background-color: var(--second-background);
+    width: 100%;
+    height: 2200px; /*****/
+    text-align: center;
+    display: flex;
+    flex-direction: column; /*****/
+    align-content: center;
+    align-items: center;
+}
+.chefs .chefstext{
+    width: 100%;
+    height: 220px;
+    align-self: start;
+    padding-top: 100px;
+}
+.chefs .chefstext h2{
+    font-family: Amatic SC;
+    font-size: 50px;
+}
+.chefs .chefcon{
+    width: 95%;
+    display: flex;
+    flex-direction: column; /*****/
+    row-gap: 30px;/*****/
+}
+.chefs .chefcon .item{
+    height: 620px;/*****/
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+    transition: 0.5s all;
+}
+.chefs .chefcon .item img{
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    border-bottom: 1px solid white;
+}
+.chefs .chefcon .item .img{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.chefs .chefcon .item .img .wave{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.chefs .chefcon .item p{
+    padding: 3px 10px 10px 10px;
+}
+.chefs .chefcon .item:hover{
+    transform: scale(1.05);
+}
+.chefs .chefcon .item .img .slinks{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    opacity: 45%;
+    width: 50px;
+    height: 175px;
+    top: 30px;
+    right: -50px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.5s 0.5s all;
+}
+.chefs .chefcon .item .img:hover .slinks{
+    right: 15px;
+}
+
+.chefs .chefcon .item .img .slinks i{
+    color: #7f8597;
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+.chefs .chefcon .item .img .slinks i:hover{
+    color: #232226;
+}
+
+
+/*----------------------gallery-----------------------*/
+
+
+.gallery{
+    background-color: var(--main-background);
+    width: 100%;
+    height: 3000px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery .gallerytext{
+    width: 100%;
+    height: 220px;
+    text-align: center;
+    align-self: start;
+    padding-top: 90px;
+    padding-bottom: 10px;
+}
+.gallery .gallerytext h2{
+    font-family: Amatic SC;
+    font-size: 50px;
+}
+
+.gallery .gallerycon{
+    width: 90%;
+    columns: 3 250px;
+    gap: 15px;
+}
+.gallery .gallerycon img{
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.5s all;
+}
+.gallery .gallerycon .gimg {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid white;
+}
+.gallery .gallerycon .gimg .hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.5s all;
+}
+.gallery .gallerycon .gimg .hover h3{
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+.gallery .gallerycon .gimg .hover p{
+    color: #DDDDDD;
+    padding: 0 20px 0 20px;
+}
+.gallery .gallerycon .gimg:hover .hover{
+    height: 100%;
+}
+.gallery .gallerycon .gimg:hover img{
+    transform: scale(1.1);
+}
+
+
+
+/*----------------------CONTACT-----------------------*/
+
+.contact{
+    background-color: var(--second-background);
+    width: 100%;
+    height: 1600px; /*****/
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.contact .contactext{
+    width: 100%;
+    height: 220px;
+    text-align: center;
+    align-self: start;
+    padding-top: 90px;
+}
+.contact .contactext h2{
+    font-family: Amatic SC;
+    font-size: 50px;
+}
+
+.contact .contactcon{
+    width: 95%; /*****/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.contact .contactcon .map {
+    width: 100%;
+    height: 350px;
+}
+.contact .contactcon .map iframe{
+    width: 100%;
+    height: 350px;
+}
+
+.contact .contactcon .info{
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*****/
+    gap: 15px;
+
+} 
+.contact .contactcon .info .con{
+    background-color: var(--main-background);
+    width: 100%; /*****/
+    height: 25%; /*****/
+    border-radius: 3px;
+    display: flex;
+    padding: 20px;
+} 
+.contact .contactcon .info .con .icon{
+    background-color: var(--main-effect);
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+.contact .contactcon .info .con .icon i{
+    color: var(--second-background);
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 17px;
+}
+.contact .contactcon .info .con h3{
+    color: var(--second-font);
+}
+.contact .contactcon .info .con p{
+    color: var(--main-font);
+}
+
+.contact .contactcon form{
+    background-color: var(--second-background);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;  /*****/
+    gap: 15px;
+    padding: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.contact .contactcon form input{
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid #E8E3E3;
+    padding: 15px;
+    transition: 0.5s all;
+}
+.contact .contactcon form input:focus:hover{
+    outline-color: var(--main-effect);
+}
+.contact .contactcon form #name{
+    width: 100%;
+}
+.contact .contactcon form #mail{
+    width: 100%;
+}
+.contact .contactcon form #sub{
+    width: 100%;
+}
+.contact .contactcon form textarea{
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid #E8E3E3;
+    height: 200px;
+    padding: 10px;
+}
+
+.contact .contactcon form button{
+    background-color: var(--main-effect);
+    width: 200px;
+    color: white;
+    font-size: 16px;
+    font-weight: 30px;
+    margin-top: 25px;
+    margin: auto;
+    padding: 13px 38px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: 0.5s all;
+}
+.contact .contactcon form button:hover{
+    background-color: var(--tr-effect);
+}
+
+
+/*----------------------FOOTER-----------------------*/
+
+
+.footer{
+    background-image: url(../images/textured-metal-background.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 830px; /******/
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+.footer .footercon{
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.footer .footercon .section1{
+    width: 100%;
+    height: 250px;
+}
+.footer .footercon .section1 .mealfiy h2{
+    color: white;
+    font-weight: 700;
+    font-size: 35px;
+    padding: 25px 0 10px;
+}
+.footer .footercon .section1 .social{
+    width: 100%;
+    height: 50%;
+    padding-top: 5px;
+    text-align: center;
+}
+.footer .footercon .section1 .social h3{
+    color: white;
+    border-bottom: 1px solid var(--main-background);
+    padding: 10px 0;
+}
+.footer .footercon .section1 .social i{
+    color: var(--main-background);
+    font-size: 30px;
+    padding: 20px 30px;
+}
+
+
+.footer .footercon .section2{
+    width: 100%;
+    height: 350px;
+}
+
+.footer .footercon .section2 h2{
+    color: var(--main-background);
+    padding: 5px 0;
+}
+.footer .footercon .section2 .mail input{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+.footer .footercon .section2 .mail button{
+    background-color: var(--main-effect);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid transparent;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+.footer .footercon .section2 .mail button i{
+    padding-right: 4px;
+    
+}
+
+.footer .footercon .section2 .links h2{
+    padding: 10px 0;
+}
+
+.footer .footercon .section2 .links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footercon .section2 .links .list1{
+    width: 50%;
+    float: left;
+}
+.footer .footercon .section2 .links .list2{
+    width: 50%;
+    float: left;
+}
+#list li{
+    color: white;
+    list-style-type: none;
+    padding: 5px 0;
+    transition: 0.5s all;
+}
+#list li:hover{
+    background-color: #222222;
+    transform: translatex(8%);
+}
+
+
+#list li i{
+    padding-right: 10px;
+}
+.clearfix{
+    clear: both;
+}
+
+
+.footer .footercon .section3 h2{
+    color: var(--main-background);
+    padding: 5px 0;
+}
+.footer .footercon .section3 .list{
+    cursor: pointer;
+    padding: 10px 0;
+}
+.footer .footercon .section3 .list li{
+    color: white;
+    padding: 10px 0;
+    list-style-type: none;
+}
+.footer .footercon .section3 .list i{
+    color: var(--main-effect);
+    font-size: 25px;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
