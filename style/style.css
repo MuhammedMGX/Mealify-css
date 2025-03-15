@@ -345,7 +345,6 @@ header .headcon .text #link:hover i{
 .gallery{
     background-color: var(--main-background);
     width: 100%;
-    height: 3000px;
     padding-bottom: 80px;
     display: flex;
     flex-direction: column;
@@ -353,7 +352,6 @@ header .headcon .text #link:hover i{
 }
 .gallery .gallerytext{
     width: 100%;
-    height: 220px;
     text-align: center;
     align-self: start;
     padding-top: 90px;
